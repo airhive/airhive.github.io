@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import {isMobile} from 'react-device-detect';
 
 import * as firebase from "firebase/app";
+import 'firebase/firestore';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 class HomePage extends React.Component{

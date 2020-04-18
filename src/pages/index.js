@@ -14,6 +14,11 @@ import '@firebase/firestore'
 import HomePage from '../components/HomePage';
 import PaginaMappa from '../components/PaginaMappa';
 
+// Gatsby
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBgHEi7pvK8fH0UKIUSzfdJB_CSgJyNtYE",
   authDomain: "airhive-app.firebaseapp.com",
@@ -24,20 +29,20 @@ const firebaseConfig = {
   appId: "1:363013463834:web:06c051b0e5c5e0194fd6a3"
 };
 firebase.initializeApp(firebaseConfig);
-firebase.firestore().enablePersistence()
-  .catch(function(err) {
-      if (err.code == 'failed-precondition') {
-          // Multiple tabs open, persistence can only be enabled
-          // in one tab at a a time.
-          // ...
-          console.log("Errore di cache, tab multiple con persistenza aperte.")
-      } else if (err.code == 'unimplemented') {
-          // The current browser does not support all of the
-          // features required to enable persistence
-          // ...
-          console.log("La persistenza non funziona in questo browser :(")
-      }
-  });
+// firebase.firestore().enablePersistence()
+//   .catch(function(err) {
+//       if (err.code == 'failed-precondition') {
+//           // Multiple tabs open, persistence can only be enabled
+//           // in one tab at a a time.
+//           // ...
+//           console.log("Errore di cache, tab multiple con persistenza aperte.")
+//       } else if (err.code == 'unimplemented') {
+//           // The current browser does not support all of the
+//           // features required to enable persistence
+//           // ...
+//           console.log("La persistenza non funziona in questo browser :(")
+//       }
+//   });
 
 let theme = createMuiTheme({
   palette: {
@@ -103,11 +108,12 @@ class SignInScreen extends React.Component {
 function App() {
   // L'equivalente del main
   return (
-    <div>
-      <ThemeProvider theme={theme}>
-       <SignInScreen />
-      </ThemeProvider>
-    </div>
+      <div>
+        <SEO title="Home" />
+        <ThemeProvider theme={theme}>
+        <SignInScreen />
+        </ThemeProvider>
+      </div>
   );
 }
 
