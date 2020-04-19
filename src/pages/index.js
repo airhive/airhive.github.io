@@ -12,7 +12,6 @@ import '@firebase/firestore'
 
 // I miei component
 import HomePage from '../components/HomePage';
-import PaginaMappa from '../components/PaginaMappa';
 
 // Gatsby
 import Layout from "../components/layout"
@@ -68,15 +67,15 @@ class SignInScreen extends React.Component {
   // Configure FirebaseUI.
   uiConfig = {
     // Popup signin flow rather than redirect flow.
-    signInFlow: 'popup',
+    signInFlow: '/PaginaMappa/',
     // We will display Google and Facebook as auth providers.
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
-    callbacks: {
-      // Avoid redirects after sign-in.
-      signInSuccessWithAuthResult: () => false
-    }
+    // callbacks: {
+    //   // Avoid redirects after sign-in.
+    //   signInSuccessWithAuthResult: () => false
+    // }
   };
 
   // Listen to the Firebase Auth state and set the local state.
@@ -94,14 +93,14 @@ class SignInScreen extends React.Component {
   // L'equivalente del main nella classe
   render() {
     // Se non è stato fatto login
-    if (!this.state.isSignedIn) {
+    // if (!this.state.isSignedIn) {
       return (
         <HomePage uiConfig={this.uiConfig}/>
       );
-    }
-    return (
-      <PaginaMappa />
-    );
+    // }
+    // return (
+    //   <PaginaMappa />
+    // );
   }
 }
 
@@ -111,7 +110,7 @@ function App() {
       <div>
         <SEO title="Home" />
         <ThemeProvider theme={theme}>
-        <SignInScreen />
+          <SignInScreen />
         </ThemeProvider>
       </div>
   );
