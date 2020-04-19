@@ -334,7 +334,7 @@ class HomePage extends React.Component{
                 <AppBar position="static" style={{backgroundColor: "transparent"}} elevation={0}>
                     <Toolbar>
                     <div style={{flexGrow: 1}} />
-                        <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage", {state: { theme }, })}>Login</Button>
+                        <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage")}>Login</Button>
                     </Toolbar>
                 </AppBar>
                     <header className="App-header">
