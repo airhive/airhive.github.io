@@ -41,13 +41,13 @@ import '@firebase/firestore'
 
 import logo from '../images/logo.svg'
 import markerIcon from '../images/icon-marker.png'
-import PaginaDati from '../components/Dati';
-import Mappa from '../components/Mappa';
+import PaginaDati from './Dati';
+import Mappa from './Mappa';
 
 import {render} from 'react-dom';
 import {StaticMap} from 'react-map-gl';
 
-import IconClusterLayer from '../components/icon-cluster-layer';
+import IconClusterLayer from './icon-cluster-layer';
 const DATA_URL =
   'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/icon/meteorites.json';
 
