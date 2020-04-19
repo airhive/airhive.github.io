@@ -20,7 +20,7 @@ module.exports = {
       options: {
         name: `AirHive`,
         short_name: `AirHive`,
-        start_url: `/`,
+        start_url: `/SignInPage`,
         background_color: `#ffffff`,
         theme_color: `#feae2c`,
         display: `standalone`,
