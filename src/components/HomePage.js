@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../images/logo.svg'
 
 import * as THREE from 'three';
@@ -9,9 +9,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import {isMobile} from 'react-device-detect';
 
-import * as firebase from "firebase/app";
-import 'firebase/firestore';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+
+import { navigate } from "gatsby"
 
 class HomePage extends React.Component{
 
@@ -53,7 +55,7 @@ class HomePage extends React.Component{
             var town = new THREE.Object3D();
 
             var createCarPos = true;
-            var uSpeed = 0.001;
+            // var uSpeed = 0.001;
 
             //----------------------------------------------------------------- FOG background
 
@@ -169,9 +171,9 @@ class HomePage extends React.Component{
             };
 
             //----------------------------------------------------------------- MOUSE function
-            var raycaster = new THREE.Raycaster();
+            // var raycaster = new THREE.Raycaster();
             var mouse = new THREE.Vector2(), INTERSECTED;
-            var intersected;
+            // var intersected;
 
             function onMouseMove(event) {
                 event.preventDefault();
@@ -186,7 +188,7 @@ class HomePage extends React.Component{
                 };
             };
             function onDocumentTouchMove( event ) {
-                if ( event.touches.length == 1 ) {
+                if ( event.touches.length === 1 ) {
                     event.preventDefault();
                     mouse.x = event.touches[ 0 ].pageX -  window.innerWidth / 2;
                     mouse.y = event.touches[ 0 ].pageY - window.innerHeight / 2;
@@ -229,9 +231,9 @@ class HomePage extends React.Component{
             city.add( gridHelper );
 
             //----------------------------------------------------------------- CAR world
-            var generateCar = function() {
+            // var generateCar = function() {
             
-            }
+            // }
             //----------------------------------------------------------------- LINES world
 
             var createCars = function(cScale = 2, cPos = 20, cColor = 0xFFFF00) {
@@ -268,10 +270,10 @@ class HomePage extends React.Component{
 
             //----------------------------------------------------------------- CAMERA position
 
-            var cameraSet = function() {
-                createCars(0.1, 20, 0xFFFFFF);
-                //TweenMax.to(camera.position, 1, {y:1+Math.random()*4, ease:Expo.easeInOut})
-            };
+            // var cameraSet = function() {
+            //     createCars(0.1, 20, 0xFFFFFF);
+            //     //TweenMax.to(camera.position, 1, {y:1+Math.random()*4, ease:Expo.easeInOut})
+            // };
 
             //----------------------------------------------------------------- ANIMATE
 
@@ -329,6 +331,12 @@ class HomePage extends React.Component{
         return (
             <div>
                 <div className="App">
+                <AppBar position="static" style={{backgroundColor: "transparent"}} elevation={0}>
+                    <Toolbar>
+                    <div style={{flexGrow: 1}} />
+                        <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage", {state: { theme }, })}>Login</Button>
+                    </Toolbar>
+                </AppBar>
                     <header className="App-header">
                         <Card style={{ width: width, backgroundColor: 'transparent'}} elevation={0}>
                             <CardMedia
@@ -343,7 +351,6 @@ class HomePage extends React.Component{
                         <p>
                         We are what we breathe.
                         </p>
-                        <StyledFirebaseAuth uiConfig={this.props.uiConfig} firebaseAuth={firebase.auth()}/>
                     </header>
                 </div>
                 <div ref={ref => (this.mount = ref)} style={{position: "absolute", marginTop: "0px"}}/>
