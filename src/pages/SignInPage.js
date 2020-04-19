@@ -7,10 +7,14 @@ import "firebase/auth";
 import '@firebase/firestore'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
 import PaginaMappa from '../components/PaginaMappa';
 
 // Import dei vari material-ui
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 
 let theme = createMuiTheme({
     palette: {
@@ -78,7 +82,16 @@ class SignInScreen extends React.Component {
       if (!this.state.isSignedIn) {
         return (
             <ThemeProvider theme={theme}>
-                <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+                <Grid container direction="column"  justify="center"  alignItems="center">
+                <Grid item xs={12} justify="center">
+                        <Typography variant="h3">LOGIN</Typography>
+                    </Grid>
+                    <Grid item xs={12} justify="center">
+                        <Paper style={{height:"80vh", width:"40vw"}} elevation={3}>
+                            <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+                        </Paper>
+                    </Grid>
+                </Grid>
             </ThemeProvider>
         );
       }
