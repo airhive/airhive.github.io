@@ -1,6 +1,7 @@
 {
   "name": "AirHive",
   "private": true,
+  "homepage": "https://airhive.github.io",
   "description": "AirHive App",
   "version": "0.1.0",
   "author": "Giulio Vaccari",
@@ -46,7 +47,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy:github": "npm run build && node ./scripts/deploy-github"
   },
   "repository": {
     "type": "git",
