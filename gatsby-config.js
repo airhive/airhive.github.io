@@ -18,12 +18,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `airhive`,
+        name: `AirHive`,
         short_name: `AirHive`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#feae2c`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
