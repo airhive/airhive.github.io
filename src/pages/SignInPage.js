@@ -10,7 +10,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import PaginaMappa from '../components/PaginaMappa';
 
 // Import dei vari material-ui
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 
 let theme = createMuiTheme({
     palette: {
