@@ -7,6 +7,7 @@ import "firebase/auth";
 import '@firebase/firestore'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
+import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
@@ -83,14 +84,16 @@ class SignInScreen extends React.Component {
         return (
             <ThemeProvider theme={theme}>
                 <Grid container direction="column"  justify="center"  alignItems="center">
-                <Grid item xs={12} justify="center">
-                        <Typography variant="h3">LOGIN</Typography>
-                    </Grid>
-                    <Grid item xs={12} justify="center">
-                        <Paper style={{height:"80vh", width:"40vw"}} elevation={3}>
-                            <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
-                        </Paper>
-                    </Grid>
+                  <Grid item xs={12} justify="center">
+                    <Typography>LOGIN</Typography>
+                  </Grid>
+                  <Grid item xs={12} justify="center">
+                      <Paper style={{height:"80vh", width:"40vw"}} elevation={3}>
+                          <Box height={20}/>
+                          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+                          <Box height={20}/>
+                      </Paper>
+                  </Grid>
                 </Grid>
             </ThemeProvider>
         );
