@@ -186,7 +186,7 @@ function MappaAppBar(props) {
           <div className={useStyles().grow} />
           {/* https://github.com/mui-org/material-ui/issues/4059 */}
           {/* <Avatar alt={displayName} src={photoUrl}/> */}
-          <img src={photoUrl} height="40" style={{margin:5}}/>
+          <img src={photoUrl} height="40" style={{margin:5, borderRadius: 20,}} alt="Utente"/>
           <IconButton color="inherit" aria-label="logout" onClick={() => {firebase.auth().signOut()}}>
             <ExitToAppIcon />
           </IconButton>
