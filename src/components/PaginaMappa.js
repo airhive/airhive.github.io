@@ -168,6 +168,8 @@ function MappaAppBar(props) {
 
     if (firebase.auth().currentUser.photoURL){
       photoUrl = firebase.auth().currentUser.photoURL;
+      console.log("urls")
+      console.log(photoUrl);
     }
     return (
       <AppBar position="fixed" color="primary" className={classes.appBar}>
@@ -182,7 +184,9 @@ function MappaAppBar(props) {
             <MenuIcon />
           </IconButton>
           <div className={useStyles().grow} />
-          <Avatar alt={displayName} src={photoUrl} >A</Avatar>
+          {/* https://github.com/mui-org/material-ui/issues/4059 */}
+          {/* <Avatar alt={displayName} src={photoUrl}/> */}
+          <img src={photoUrl} height="40" style={{margin:5}}/>
           <IconButton color="inherit" aria-label="logout" onClick={() => {firebase.auth().signOut()}}>
             <ExitToAppIcon />
           </IconButton>
