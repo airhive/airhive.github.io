@@ -25,9 +25,14 @@ const useStyles = makeStyles(theme => ({
 
 function Griglia (props){
     const [righe, setRighe] = React.useState([0]);
+    const calcolaQuale = (_righe) => {
+        let media = Math.round(_righe.map(riga => riga.airindex).reduce((a, b) => a + b, 0)/(righe.length*10))
+        return media > 12 ? 12 : media
+    }
     const columns = [
         { key: "citta", name: "Città" },
         { key: "nome", name: "Nome" },
+        { key: "airindex", name: "Indice" },
         { key: "pm10", name: "Pm10" },
         { key: "no2", name: "NO2" },
         { key: "o3", name: "O3" }
@@ -44,7 +49,7 @@ function Griglia (props){
                 pm10: v.data().pm10,
                 no2: v.data().no2,
                 o3: v.data().o3,
-
+                airindex: ((v.data().no2/400) + (v.data().pm10/180) + (v.data().o3/240))*100
              })))
         }, err => {
         console.log(`Encountered error: ${err}`);
@@ -57,12 +62,18 @@ function Griglia (props){
         Caricamento...
     </Typography> : 
     <Grid container direction="row" spacing={2} justify="center" alignItems="center">
-        <Grid item xs={6} justify="right" alignItems="center">
+        <Grid item xs={3} justify="right" alignItems="center">
             <Paper style={{textAlign: 'center'}}>
-            <p>Sono una analisi</p>
+                <p>L'aria è {
+                ["estremamente pulita", "molto pulita", "pulita", "pulita", "abbastanza pulita", "mediocre", "mediocre", "mediocre/sporca", "sporca", "cattiva", "pericolosa", "molto pericolosa", "estremamente pericolosa"][calcolaQuale(righe)]
+                }</p>
+                <p>Media indice: {righe.map(riga => riga.airindex).reduce((a, b) => a + b, 0)/righe.length}</p>
+                <p>Media PM10: {righe.map(riga => riga.pm10).reduce((a, b) => a + b, 0)/righe.length}</p>
+                <p>Media NO2: {righe.map(riga => riga.no2).reduce((a, b) => a + b, 0)/righe.length}</p>
+                <p>Media O3: {righe.map(riga => riga.o3).reduce((a, b) => a + b, 0)/righe.length}</p>
             </Paper>
         </Grid>
-        <Grid item xs={6} justify="left" alignItems="center">
+        <Grid item xs={8} justify="left" alignItems="center">
             <DataGrid
                 columns={columns}
                 rows={righe}

@@ -158,8 +158,6 @@ function MappaAppBar(props) {
 
     if (firebase.auth().currentUser.photoURL){
       photoUrl = firebase.auth().currentUser.photoURL;
-      console.log("urls")
-      console.log(photoUrl);
     }
     return (
       <AppBar position="fixed" color="primary" className={classes.appBar}>
