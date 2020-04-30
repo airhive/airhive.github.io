@@ -20,7 +20,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 // Icone di material-ui
 import BarChartIcon from '@material-ui/icons/BarChart';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
@@ -31,23 +30,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import RoomIcon from '@material-ui/icons/Room';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 
-import ReactMapGL, {Marker, Popup} from 'react-map-gl';
-import DeckGL from '@deck.gl/react';
 import { AmbientLight, PointLight, LightingEffect, MapView } from '@deck.gl/core';
-import {IconLayer} from 'deck.gl';
 
 import * as firebase from "firebase/app";
 import '@firebase/firestore'
 
 import logo from '../images/logo.svg'
-import markerIcon from '../images/icon-marker.png'
 import PaginaDati from './Dati';
 import Mappa from './Mappa';
-
-import {render} from 'react-dom';
-import {StaticMap} from 'react-map-gl';
-
-import IconClusterLayer from './icon-cluster-layer';
 const DATA_URL =
   'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/icon/meteorites.json';
 

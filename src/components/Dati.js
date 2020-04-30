@@ -49,17 +49,26 @@ function Griglia (props){
         }, err => {
         console.log(`Encountered error: ${err}`);
         });
-        // Fa un errore ma funziona bene, va capito come sistemarlo
+        // Lancia un warning ma funziona bene, va capito come sistemarlo
         props.setAggiorna(false);
     }
     return (
         (righe[0] == 0) ? <Typography variant="h3" component="h4">
         Caricamento...
     </Typography> : 
-    <DataGrid
-      columns={columns}
-      rows={righe}
-    />
+    <Grid container direction="row" spacing={2} justify="center" alignItems="center">
+        <Grid item xs={6} justify="right" alignItems="center">
+            <Paper style={{textAlign: 'center'}}>
+            <p>Sono una analisi</p>
+            </Paper>
+        </Grid>
+        <Grid item xs={6} justify="left" alignItems="center">
+            <DataGrid
+                columns={columns}
+                rows={righe}
+            />
+        </Grid>
+    </Grid>
     )
 }
 
@@ -116,15 +125,7 @@ function PaginaDati (){
                 </Grid>
                 <Grid key="contenuto" item>
                     <Paper>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12}>
-                                <Grid container justify="center" spacing={2}>
-                                    <Grid key="testo" item justify="center" xs={12} sm={6}>
-                                        <Griglia citta={citta} aggiorna={aggiorna} setAggiorna={setAggiorna}/>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
+                        <Griglia citta={citta} aggiorna={aggiorna} setAggiorna={setAggiorna}/>
                     </Paper>
                 </Grid>
             </Grid>
