@@ -1,0 +1,50 @@
+.about{
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    background-image: url("../images/airhive_mappa.webp"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.copertina {
+    max-height: 100vh;
+}
+
+.cardAbout {
+    margin-top: 40vh;
+    display: 'inline-block';
+    max-width: "50vw"
+}
+
+.cardWho {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: 'inline-block';
+}
+
+.who{
+    min-height: 50vh;
+    background-color: #ffd000;
+    color: white;
+  }
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+}
+
+.fraseContattaci {
+    min-height: 25vh;
+    background-color: #ffffff;
+}

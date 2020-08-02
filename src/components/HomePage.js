@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.svg'
+import giulio from "../images/squadra/giulio.webp"
+import './homePage.css';
 
 import * as THREE from 'three';
 import { TweenMax, Power1 } from "gsap/all";
@@ -10,10 +12,96 @@ import CardMedia from '@material-ui/core/CardMedia';
 import {isMobile} from 'react-device-detect';
 
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import CardContent from '@material-ui/core/CardContent';
+import Fab from '@material-ui/core/Fab';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import { navigate } from "gatsby"
+
+function ChiSiamo(){
+    var direzione = "row"
+    var xs = 4;
+    if(isMobile){
+        direzione = "column";
+        xs = 12;
+    }
+    return <Grid
+    container
+    direction={direzione}
+    spacing={3}
+    justify="center"
+    alignItems="center"
+>
+    <Grid item xs={xs}>
+        <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            spacing={1}
+        >
+            <Grid item xs={xs}>
+                <div class="image-cropper">
+                    <img src={giulio} className="giulio" alt="giulio" />
+                </div>
+            </Grid>
+            <Grid item xs={xs}>
+                <p>Andrea Carpi</p>
+            </Grid>
+            <Grid item xs={xs}>
+                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria Biomedica @POLIMI</Typography>
+            </Grid>
+        </Grid>
+    </Grid>
+    <Grid item xs={xs}>
+        <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            spacing={1}
+        >
+            <Grid item xs={xs}>
+                <div class="image-cropper">
+                    <img src={giulio} className="giulio" alt="giulio" />
+                </div>
+            </Grid>
+            <Grid item xs={xs}>
+                <p>Giulio Vaccari</p>
+            </Grid>
+            <Grid item xs={xs}>
+                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
+            </Grid>
+        </Grid>
+    </Grid>
+    <Grid item xs={xs}>
+        <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            spacing={1}
+        >
+            <Grid item xs={xs}>
+                <div class="image-cropper">
+                    <img src={giulio} className="giulio" alt="giulio" />
+                </div>
+            </Grid>
+            <Grid item xs={xs}>
+                <p>Davide Zanatta</p>
+            </Grid>
+            <Grid item xs={xs}>
+                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
+            </Grid>
+        </Grid>
+    </Grid>
+</Grid>
+}
 
 class HomePage extends React.Component{
 
@@ -325,36 +413,111 @@ class HomePage extends React.Component{
 
     render() {
         var width = "20%";
+        var maxCardwidth = "50vw";
         if (isMobile){
             width = "60%";
+            maxCardwidth = "100vw";
         }
+        console.log(maxCardwidth)
         return (
-            <div>
+            <>
                 <div className="App">
                 <AppBar position="fixed" style={{backgroundColor: "transparent"}} elevation={0}>
                     <Toolbar>
-                    <div style={{flexGrow: 1}} />
+                        <div style={{flexGrow: 1}} />
                         <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage")}>Login</Button>
                     </Toolbar>
                 </AppBar>
-                    <header className="App-header">
-                        <Card style={{ width: width, backgroundColor: 'transparent'}} elevation={0}>
-                            <CardMedia
-                                style={{
-                                backgroundColor: 'transparent',
-                                }}
-                                image={logo}
-                                title="AirHive"
-                                component="img"
-                            />
+                    <div className="copertina">
+                        <header className="App-header">
+                            <Card style={{ width: width, backgroundColor: 'transparent'}} elevation={0}>
+                                <CardMedia
+                                    style={{
+                                    backgroundColor: 'transparent',
+                                    }}
+                                    image={logo}
+                                    title="AirHive"
+                                    component="img"
+                                />
+                            </Card>
+                            <p>
+                            We are what we breathe.
+                            </p>
+                        </header>
+                        <Fab color="inherit" size="small" href="#about" aria-label="about" style={{bottom:80}}>
+                            <KeyboardArrowDownIcon style={{fill: "black"}}/>
+                        </Fab>
+                    </div>
+                    <div className="about" id="about">
+                        <Grid
+                            container
+                            direction="row"
+                            justify="flex-start"
+                            alignItems="center"
+                        >
+                            <Grid
+                            item
+                            xs={12}
+                            >
+                                <Card className="cardAbout" style={{display: 'inline-block', maxWidth: {maxCardwidth}}}>
+                                    <CardContent>
+                                        <Typography color="textSecondary" gutterBottom>
+                                            Una nuova visione del mondo
+                                        </Typography>
+                                        <Typography variant="h5" component="h2">
+                                            Una mappa sull'inquinamento ad una risoluzione mai vista.
+                                        </Typography>
+                                        <Typography variant="body2" component="p">
+                                        Grazie a <b>sensori</b> sul territorio ed a un accurato uso degli strumenti di <b>visualizzazione dati</b> <br/>
+                                        possiamo mostrare e far comprendere l'evoluzione sul territorio di inquinanti come<br/> 
+                                        CO2 NO2 SO4 e molti altri.
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        </Grid>
+                        <Fab color="inherit" size="small" href="#who" aria-label="who" style={{bottom:0}}>
+                            <KeyboardArrowDownIcon style={{fill: "black"}}/>
+                        </Fab>
+                    </div>
+                    <div className="who" id="who">
+                        <Card className="cardWho" style={{display: 'inline-block', width:"70vw"}}>
+                            <CardContent>
+                                <Typography variant="h5" component="h2">
+                                    La squadra:
+                                </Typography>
+                                <Typography color="textSecondary" style={{marginBottom:20}}>
+                                    Nati da una vittoria alla NASA Space Apps Challenge del 2018 abbiamo deciso di proseguire e concretizzare il progetto.
+                                </Typography>
+                                <ChiSiamo/>
+                            </CardContent>
                         </Card>
-                        <p>
-                        We are what we breathe.
-                        </p>
-                    </header>
+                    </div>
+                    <div className="fraseContattaci">
+                            <Typography color="textSecondary">
+                                <br/><br/>Vuoi mettere dei sensori nella tua città o hai qualche curiosità?
+                            </Typography>
+                            {/* <ArrowDownwardIcon style={{marginTop:"20px"}}/> */}
+                            <a href="mailto:info@airhive.it" style={{color:"black"}}>
+                                <Typography variant="h3">
+                                    info@airhive.it
+                                </Typography>
+                            </a>
+                    </div>
+                    <AppBar position="relative" style={{top:"auto", bottom:0, backgroundColor: "black", color:"white"}} elevation={0}>
+                    <Toolbar>
+                        <Button  href="https://www.airhive.it/legal/" style={{color:"white", fontSize:"10px"}}>
+                        Privacy Policy
+                        </Button>
+                        <div style={{flexGrow: 1}} />
+                        <Button  href="#" style={{color:"white", fontSize:"10px"}}>
+                        Copyright © AirHive 2020
+                        </Button>
+                    </Toolbar>
+                    </AppBar>
+                    <div ref={ref => (this.mount = ref)} style={{position: "fixed", marginTop: "0px"}}/>
                 </div>
-                <div ref={ref => (this.mount = ref)} style={{position: "absolute", marginTop: "0px"}}/>
-            </div>
+            </>
         )
     }
 
