@@ -475,10 +475,10 @@ class HomePage extends React.Component{
                                 </Card>
                             </Grid>
                         </Grid>
-                        <Fab color="inherit" size="small" href="#who" aria-label="who" style={{bottom:0}}>
+                    </div>
+                    <Fab color="inherit" size="small" href="#who" aria-label="who" style={{bottom:80}}>
                             <KeyboardArrowDownIcon style={{fill: "black"}}/>
                         </Fab>
-                    </div>
                     <div className="who" id="who">
                         <Card className="cardWho" style={{display: 'inline-block', width:"70vw"}}>
                             <CardContent>
