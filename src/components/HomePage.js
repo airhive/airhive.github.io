@@ -31,76 +31,76 @@ function ChiSiamo(){
         xs = 12;
     }
     return <Grid
-    container
-    direction={direzione}
-    spacing={3}
-    justify="center"
-    alignItems="center"
->
-    <Grid item xs={xs}>
-        <Grid
-            container
-            direction="column"
-            justify="flex-start"
-            alignItems="center"
-            spacing={1}
-        >
-            <Grid item xs={xs}>
-                <div class="image-cropper">
-                    <img src={giulio} className="giulio" alt="giulio" />
-                </div>
+        container
+        direction={direzione}
+        spacing={3}
+        justify="center"
+        alignItems="center"
+    >
+        <Grid item xs={xs}>
+            <Grid
+                container
+                direction="column"
+                justify="flex-start"
+                alignItems="center"
+                spacing={1}
+            >
+                <Grid item xs={xs}>
+                    <div class="image-cropper">
+                        <img src={giulio} className="giulio" alt="giulio" />
+                    </div>
+                </Grid>
+                <Grid item xs={xs}>
+                    <p>Andrea Carpi</p>
+                </Grid>
+                <Grid item xs={xs}>
+                    <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria Biomedica @POLIMI</Typography>
+                </Grid>
             </Grid>
-            <Grid item xs={xs}>
-                <p>Andrea Carpi</p>
+        </Grid>
+        <Grid item xs={xs}>
+            <Grid
+                container
+                direction="column"
+                justify="flex-start"
+                alignItems="center"
+                spacing={1}
+            >
+                <Grid item xs={xs}>
+                    <div class="image-cropper">
+                        <img src={giulio} className="giulio" alt="giulio" />
+                    </div>
+                </Grid>
+                <Grid item xs={xs}>
+                    <p>Giulio Vaccari</p>
+                </Grid>
+                <Grid item xs={xs}>
+                    <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
+                </Grid>
             </Grid>
-            <Grid item xs={xs}>
-                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria Biomedica @POLIMI</Typography>
+        </Grid>
+        <Grid item xs={xs}>
+            <Grid
+                container
+                direction="column"
+                justify="flex-start"
+                alignItems="center"
+                spacing={1}
+            >
+                <Grid item xs={xs}>
+                    <div class="image-cropper">
+                        <img src={giulio} className="giulio" alt="giulio" />
+                    </div>
+                </Grid>
+                <Grid item xs={xs}>
+                    <p>Davide Zanatta</p>
+                </Grid>
+                <Grid item xs={xs}>
+                    <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>
-    <Grid item xs={xs}>
-        <Grid
-            container
-            direction="column"
-            justify="flex-start"
-            alignItems="center"
-            spacing={1}
-        >
-            <Grid item xs={xs}>
-                <div class="image-cropper">
-                    <img src={giulio} className="giulio" alt="giulio" />
-                </div>
-            </Grid>
-            <Grid item xs={xs}>
-                <p>Giulio Vaccari</p>
-            </Grid>
-            <Grid item xs={xs}>
-                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
-            </Grid>
-        </Grid>
-    </Grid>
-    <Grid item xs={xs}>
-        <Grid
-            container
-            direction="column"
-            justify="flex-start"
-            alignItems="center"
-            spacing={1}
-        >
-            <Grid item xs={xs}>
-                <div class="image-cropper">
-                    <img src={giulio} className="giulio" alt="giulio" />
-                </div>
-            </Grid>
-            <Grid item xs={xs}>
-                <p>Davide Zanatta</p>
-            </Grid>
-            <Grid item xs={xs}>
-                <Typography color="Typography" style={{fontSize:"10px"}}>Ingegneria dell'Automazione @POLIMI</Typography>
-            </Grid>
-        </Grid>
-    </Grid>
-</Grid>
 }
 
 class HomePage extends React.Component{
@@ -418,7 +418,6 @@ class HomePage extends React.Component{
             width = "60%";
             maxCardwidth = "100vw";
         }
-        console.log(maxCardwidth)
         return (
             <>
                 <div className="App">
