@@ -443,7 +443,12 @@ class HomePage extends React.Component{
                             We are what we breathe.
                             </p>
                         </header>
-                        <Fab color="inherit" size="small" href="#about" aria-label="about" style={{bottom:80}}>
+                        {/* <Fab color="inherit" size="small" href="#about" aria-label="about" style={{bottom:80}}>
+                            <KeyboardArrowDownIcon style={{fill: "black"}}/>
+                        </Fab> */}
+                    </div>
+                    <div className="freccia" style={{height:0, bottom:80, position:"relative"}}>
+                        <Fab color="inherit" size="small" href="#who" aria-label="who">
                             <KeyboardArrowDownIcon style={{fill: "black"}}/>
                         </Fab>
                     </div>
@@ -476,9 +481,11 @@ class HomePage extends React.Component{
                             </Grid>
                         </Grid>
                     </div>
-                    <Fab color="inherit" size="small" href="#who" aria-label="who" style={{bottom:80}}>
+                    <div className="freccia" style={{height:0, bottom:80, position:"relative"}}>
+                        <Fab color="inherit" size="small" href="#who" aria-label="who">
                             <KeyboardArrowDownIcon style={{fill: "black"}}/>
                         </Fab>
+                    </div>
                     <div className="who" id="who">
                         <Card className="cardWho" style={{display: 'inline-block', width:"70vw"}}>
                             <CardContent>
