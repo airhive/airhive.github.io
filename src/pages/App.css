@@ -90,7 +90,7 @@ a, a:hover, a:visited {
   -webkit-user-select: none; /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
-h1::after {
+/* h1::after {
   content: ' Three JS';
   font-size: 12px;
   position:absolute;
@@ -104,7 +104,7 @@ h2::after {
   position:absolute;
   top: 14px;
   padding-left: 5px;
-}
+} */
 
 .btn {
   border-radius: 100px;
