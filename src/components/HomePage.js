@@ -443,12 +443,9 @@ class HomePage extends React.Component{
                             We are what we breathe.
                             </p>
                         </header>
-                        {/* <Fab color="inherit" size="small" href="#about" aria-label="about" style={{bottom:80}}>
-                            <KeyboardArrowDownIcon style={{fill: "black"}}/>
-                        </Fab> */}
                     </div>
                     <div className="freccia" style={{height:0, bottom:80, position:"relative"}}>
-                        <Fab color="inherit" size="small" href="#who" aria-label="who">
+                        <Fab color="inherit" size="small" href="#about" aria-label="about">
                             <KeyboardArrowDownIcon style={{fill: "black"}}/>
                         </Fab>
                     </div>
