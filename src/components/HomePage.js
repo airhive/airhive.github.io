@@ -424,7 +424,7 @@ class HomePage extends React.Component{
                 <AppBar position="fixed" style={{backgroundColor: "transparent"}} elevation={0}>
                     <Toolbar>
                         <div style={{flexGrow: 1}} />
-                        <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage")}>Login</Button>
+                        <Button variant="contained" color="primary" onClick = {() => navigate("/SignInPage")}>ciao</Button>
                     </Toolbar>
                 </AppBar>
                     <div className="copertina">
